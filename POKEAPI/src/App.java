@@ -1,3 +1,6 @@
+// Giovanny Martinez Dominguez
+// 24/febrero/2024
+
 import java.awt.BorderLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
@@ -69,7 +72,7 @@ public class App {
             JPanel pokemonPanel = createPokemonPanel(pokemonName, ability, baseExperience, imageUrl);
             frame.getContentPane().removeAll(); // Limpia el contenido anterior
             frame.add(pokemonPanel, BorderLayout.CENTER);
-            frame.add(createNewButton(frame), BorderLayout.SOUTH); // Agrega un nuevo botón para futuras consultas
+            frame.add(createNewButton(frame), BorderLayout.SOUTH); 
             frame.pack();
         } catch (IOException e) {
             JOptionPane.showMessageDialog(frame, "Error al obtener información del Pokémon.", "Error",
@@ -161,19 +164,14 @@ public class App {
         JLabel abilityLabel = new JLabel("Habilidad: " + ability);
         JLabel experienceLabel = new JLabel("Experiencia Base: " + baseExperience);
 
-        // Crea un panel interno para contener la información
         JPanel infoPanel = new JPanel();
         infoPanel.setLayout(new BoxLayout(infoPanel, BoxLayout.Y_AXIS)); // Layout vertical
 
-        // Agrega los elementos al panel interno
         infoPanel.add(nameLabel);
         infoPanel.add(abilityLabel);
         infoPanel.add(experienceLabel);
-
-        // Agrega el panel interno al centro del panel principal
+                
         panel.add(infoPanel, BorderLayout.CENTER);
-
-        // Agrega la imagen en la parte inferior del panel principal
         panel.add(imageLabel, BorderLayout.SOUTH);
 
         return panel;
